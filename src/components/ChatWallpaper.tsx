@@ -5,21 +5,31 @@ import Owl from "./animals/Owl";
 import Dolphin from "./animals/Dolphin";
 
 const ChatWallpaper = () => {
-  const animals = Array(24).fill(null);
+  // Increase the number of animals for better coverage
+  const animals = Array(48).fill(null);
 
   return (
-    <div className="fixed inset-0 w-full h-full bg-gradient-to-br from-[#1A1F2C] to-[#151823] -z-10">
-      <div className="absolute inset-0 grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 p-8">
+    <div className="fixed inset-0 w-full h-full bg-gradient-to-br from-[#1A1F2C] to-[#151823] -z-10 overflow-hidden">
+      <div className="absolute inset-0">
         {animals.map((_, index) => {
           const Animal = [Deer, Penguin, Fox, Owl, Dolphin][index % 5];
+          // Calculate random positions for more scattered look
+          const randomX = Math.random() * 100;
+          const randomY = Math.random() * 100;
+          const randomRotate = Math.random() * 360;
+          const randomScale = 0.8 + Math.random() * 0.4; // Random scale between 0.8 and 1.2
+
           return (
             <div
               key={index}
-              className="flex items-center justify-center transform text-[#9b87f5] hover:text-[#b3a4f7]"
+              className="absolute flex items-center justify-center transform text-[#9b87f5] hover:text-[#b3a4f7] transition-all duration-300"
               style={{
-                transform: `rotate(${Math.random() * 360}deg) translate(${
-                  Math.random() * 20 - 10
-                }px, ${Math.random() * 20 - 10}px)`,
+                left: `${randomX}%`,
+                top: `${randomY}%`,
+                transform: `rotate(${randomRotate}deg) scale(${randomScale})`,
+                opacity: 0.7,
+                width: '48px',
+                height: '48px',
               }}
             >
               <Animal />
