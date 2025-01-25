@@ -2,6 +2,7 @@ import Deer from "./animals/Deer";
 import Penguin from "./animals/Penguin";
 import Fox from "./animals/Fox";
 import Owl from "./animals/Owl";
+import Dolphin from "./animals/Dolphin";
 
 const ChatWallpaper = () => {
   const animals = Array(24).fill(null);
@@ -10,7 +11,7 @@ const ChatWallpaper = () => {
     <div className="fixed inset-0 w-full h-full bg-gradient-to-br from-[#f8f9fa] to-[#e9ecef] -z-10">
       <div className="absolute inset-0 grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 p-8">
         {animals.map((_, index) => {
-          const Animal = [Deer, Penguin, Fox, Owl][index % 4];
+          const Animal = [Deer, Penguin, Fox, Owl, Dolphin][index % 5];
           return (
             <div
               key={index}

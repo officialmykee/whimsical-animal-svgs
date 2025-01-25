@@ -8,12 +8,12 @@ const Penguin = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path d="M12 3a4 4 0 0 0-4 4v2a4 4 0 0 0 8 0V7a4 4 0 0 0-4-4z" />
-    <path d="M12 11v10" />
-    <path d="M9 17l3 3 3-3" />
-    <path d="M8 7h8" />
-    <circle cx="10" cy="6" r="1" />
-    <circle cx="14" cy="6" r="1" />
+    <path d="M12 3a5 5 0 0 0-5 5v2a5 5 0 0 0 10 0V8a5 5 0 0 0-5-5Z" />
+    <path d="M12 10v6" />
+    <path d="M8 16h8" />
+    <path d="M9 20h6" />
+    <circle cx="10" cy="7" r="1" fill="currentColor" />
+    <circle cx="14" cy="7" r="1" fill="currentColor" />
   </svg>
 );
 
