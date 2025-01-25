@@ -5,19 +5,19 @@ import Owl from "./animals/Owl";
 import Dolphin from "./animals/Dolphin";
 
 const ChatWallpaper = () => {
-  // Increase the number of animals for better coverage
-  const animals = Array(48).fill(null);
+  // Increase the number of animals even more
+  const animals = Array(72).fill(null);
 
   return (
     <div className="fixed inset-0 w-full h-full bg-gradient-to-br from-[#1A1F2C] to-[#151823] -z-10 overflow-hidden">
       <div className="absolute inset-0">
         {animals.map((_, index) => {
           const Animal = [Deer, Penguin, Fox, Owl, Dolphin][index % 5];
-          // Calculate random positions for more scattered look
-          const randomX = Math.random() * 100;
-          const randomY = Math.random() * 100;
+          // Adjust random positions to bring animals closer together
+          const randomX = (Math.random() * 80) + 10; // Keep animals within 10-90% of the width
+          const randomY = (Math.random() * 80) + 10; // Keep animals within 10-90% of the height
           const randomRotate = Math.random() * 360;
-          const randomScale = 0.8 + Math.random() * 0.4; // Random scale between 0.8 and 1.2
+          const randomScale = 0.6 + Math.random() * 0.4; // Slightly smaller scale range
 
           return (
             <div
@@ -28,8 +28,8 @@ const ChatWallpaper = () => {
                 top: `${randomY}%`,
                 transform: `rotate(${randomRotate}deg) scale(${randomScale})`,
                 opacity: 0.7,
-                width: '48px',
-                height: '48px',
+                width: '40px', // Slightly smaller size
+                height: '40px',
               }}
             >
               <Animal />
